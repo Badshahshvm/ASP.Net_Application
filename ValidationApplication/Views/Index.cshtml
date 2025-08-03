@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model WebApplication2.Models.Student
+
+<div class="conatiner-fuid">
+@using(Html.BeginForm("Index","Home","Post"))
+{
+    <div class="row">
+        <div class="col-sm-6">
+
+            <div>@Html.DisplayName("Name")</div>
+            <div>@Html.Editor("name")
+               @Html.ValidationMessage("name")</div>
+
+            <div>@Html.DisplayName("Roll")</div>
+            <div>@Html.Editor("roll")
+            @Html.ValidationMessage("roll")</div>
+
+            <div>@Html.DisplayName("Age")</div>
+            <div>@Html.Editor("age")</div>
+
+            <div>@Html.DisplayName("Email")</div>
+            <div>@Html.Editor("email")
+               @Html.ValidationMessage("email", new {style="color:red;"})</div>
+
+            <div>@Html.DisplayName("Gender")</div>
+            <div>@Html.Editor("gender")</div>
+
+            <div>@Html.DisplayName("Phone")</div>
+            <div>@Html.Editor("phone")</div>
+
+            <div>
+                <input type="submit" class="btn btn-primary" value="Submit" />
+            </div>
+        </div>
+    </div>
+}
+
+</div>
+
