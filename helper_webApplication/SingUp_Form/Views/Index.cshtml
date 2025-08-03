@@ -1,0 +1,78 @@
+@{
+    ViewData["Title"] = "Sign Up";
+
+    List<string> crs = new List<string>
+    {
+        "Java", "C++", "Python", "JavaScript", "C#", "Machine Learning", "Artificial Intelligence", "Web Developer"
+    };
+
+    List<string> city = new List<string>
+    {
+        "Bangalore", "Ahmedabad", "Delhi", "Hyderabad", "Gurugram"
+    };
+}
+
+<div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-12">
+            <h2 class="mb-4">Sign Up</h2>
+
+            @using (Html.BeginForm("ShowData", "Home", FormMethod.Post))
+            {
+                <div class="mb-3">
+                    @Html.Label("name", "Full Name", new { @class = "form-label" })
+                    @Html.TextBox("name", null, new { @class = "form-control", placeholder = "Enter your full name" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.Label("email", "Email Address", new { @class = "form-label" })
+                    @Html.TextBox("email", null, new { @class = "form-control", type = "email", placeholder = "Enter your email" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.Label("gender", "Select Gender", new { @class = "form-label d-block" })
+                    @Html.RadioButton("gender", "Male", true, new { id = "Male" }) <label for="Male">Male</label>&nbsp;
+                    @Html.RadioButton("gender", "Female", false, new { id = "Female" }) <label for="Female">Female</label>&nbsp;
+                    @Html.RadioButton("gender", "Other", false, new { id = "Other" }) <label for="Other">Other</label>
+                </div>
+
+                <div class="mb-3">
+                    @Html.Label("course", "Select Course", new { @class = "form-label" })
+                    @Html.DropDownList("course", new SelectList(crs), "Select Course", new { @class = "form-control" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.Label("city", "Select Your City", new { @class = "form-label" })
+                    @Html.DropDownList("city", new SelectList(city), "Select City", new { @class = "form-control" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.Label("hobbies", "Select Hobbies", new { @class = "form-label d-block" })
+                    @Html.CheckBox("cricket") <label for="cricket">Cricket</label>&nbsp;
+                    @Html.CheckBox("music") <label for="music">Music</label>&nbsp;
+                    @Html.CheckBox("games") <label for="games">Games</label>&nbsp;
+                    @Html.CheckBox("reading") <label for="reading">Reading</label>
+                </div>
+
+                <div class="mb-3">
+                    @Html.Label("address", "Address", new { @class = "form-label" })
+                    @Html.TextArea("address", null, new { @class = "form-control", rows = "3", placeholder = "Enter your address" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.Label("password", "Password", new { @class = "form-label" })
+                    @Html.Password("password", null, new { @class = "form-control", placeholder = "Enter a password" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.Label("confirmPassword", "Confirm Password", new { @class = "form-label" })
+                    @Html.Password("confirmPassword", null, new { @class = "form-control", placeholder = "Re-enter your password" })
+                </div>
+
+                <div class="d-grid">
+                    <input type="submit" value="Sign Up" class="btn btn-primary" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
