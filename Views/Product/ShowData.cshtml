@@ -1,0 +1,44 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-primary text-white text-center fs-4 fw-semibold">
+                    Product Details
+                </div>
+                <div class="card-body p-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Name:</strong> @ViewBag.name
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Price:</strong> ₹@ViewBag.price
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Category:</strong> @ViewBag.category
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Stock:</strong> @ViewBag.stock units
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Description:</strong>
+                            <p class="mt-1">@ViewBag.description</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/Home/Index" class="btn btn-outline-primary">Back to Form</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
