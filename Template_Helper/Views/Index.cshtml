@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Template.Models.StudentModel
+
+@using(@Html.BeginForm("Index","Home"))
+{
+    @Html.DisplayName("name")
+    @Html.Editor("name")
+    <br/>
+     @Html.DisplayName("roll")
+    @Html.Editor("roll")
+    <br/>
+     @Html.DisplayName("phone")
+    @Html.Editor("phone")
+    <br/>
+     @Html.DisplayName("dob")
+    @Html.Editor("dob")
+
+}
